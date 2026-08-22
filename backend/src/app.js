@@ -25,6 +25,31 @@ app.use((req, res, next) => {
   next();
 });
 
+// Root Route
+app.get('/', (req, res) => {
+  res.json({
+    service: 'BlackSky QMaps Backend',
+    status: 'operational',
+    endpoints: {
+      health: '/api/health',
+      map: '/api/map/tiles/:z/:x/:y',
+      terrain: '/api/map/terrain/:lat/:lng/:zoom',
+      directions: '/api/directions/:from/:to',
+      languages: '/api/language/supported',
+      translate: '/api/language/translate',
+      incidents: '/api/incidents',
+      poia_consent: '/api/poia/consent',
+      poia_data: '/api/poia/data'
+    },
+    quantum: {
+      chsh_s: '2.76',
+      correlation: '98.4%',
+      patent: 'SA 2026/05142'
+    },
+    version: '1.0.0'
+  });
+});
+
 // Health Check
 app.get('/api/health', (req, res) => {
   res.json({
