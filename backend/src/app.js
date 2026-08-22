@@ -123,3 +123,7 @@ server.listen(PORT, () => {
   console.log('🔒 EntangleGuard Active');
   console.log('🗣️ 13 African Languages Ready');
 });
+
+// Disaster Routes
+const disasterRoutes = require('./api/routes/disaster');
+app.use('/api/disaster', disasterRoutes);
