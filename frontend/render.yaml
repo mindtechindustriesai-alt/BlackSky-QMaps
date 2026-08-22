@@ -1,12 +1,9 @@
 services:
   - type: web
-    name: blacksky-qmaps-frontend
+    name: blacksky-qmaps-africa
     runtime: static
     repo: https://github.com/mindtechindustriesai-alt/BlackSky-QMaps.git
     branch: main
     plan: free
-    buildCommand: cd frontend && npm install
-    staticPublishPath: frontend/public
-    envVars:
-      - key: REACT_APP_API_URL
-        value: https://blacksky-qmaps-backend.onrender.com
+    rootDir: frontend/public
+    staticPublishPath: ./
