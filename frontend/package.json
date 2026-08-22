@@ -1,0 +1,12 @@
+{
+  "name": "blacksky-qmaps-frontend",
+  "version": "1.0.0",
+  "description": "BlackSky QMaps — 3D Quantum Mapping Client",
+  "scripts": {
+    "start": "serve public",
+    "build": "echo 'Build complete'"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

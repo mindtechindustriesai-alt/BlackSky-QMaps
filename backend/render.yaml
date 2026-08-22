@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: blacksky-qmaps-backend
+    runtime: node
+    repo: https://github.com/mindtechindustriesai-alt/BlackSky-QMaps.git
+    branch: main
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: PORT
+        value: 3000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ENTANGLEGUARD_KEY
+        generateValue: true
