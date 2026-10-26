@@ -20,6 +20,24 @@ IBM_JOB_ID = "d8uhvl4bp3hs738628cg"
 LUVUNO_URL = "https://luvuno-backend-proxy.onrender.com"
 
 # ============================================================
+# ROOT (Fixes the 404 on /)
+# ============================================================
+@app.route('/')
+def root():
+    return jsonify({
+        "service": "BlackSky QMaps",
+        "status": "operational",
+        "quantum_badge": f"CHSH S={CHSH_S}",
+        "patent": PATENT,
+        "endpoints": [
+            "/api/v1/verify/chsh",
+            "/api/v1/apps/qmaps/status",
+            "/api/chat",
+            "/api/quantum/status"
+        ]
+    })
+
+# ============================================================
 # EXISTING QUANTUM ROUTES
 # ============================================================
 @app.route('/api/quantum/status', methods=['GET'])
